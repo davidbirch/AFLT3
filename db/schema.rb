@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140301073530) do
+ActiveRecord::Schema.define(version: 20140301082748) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 20140301073530) do
     t.date     "published_at"
     t.text     "intro"
     t.text     "extended"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "raw_tweets", force: true do |t|
+    t.text     "raw"
+    t.integer  "tweet_guid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
