@@ -1,2 +1,0 @@
-class RawTweetsController < ApplicationController
-end

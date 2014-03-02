@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140301082748) do
+ActiveRecord::Schema.define(version: 20140302014927) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 20140301082748) do
   create_table "raw_tweets", force: true do |t|
     t.text     "raw"
     t.integer  "tweet_guid", limit: 8
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tweets", force: true do |t|
+    t.string   "tweet_text"
+    t.datetime "tweet_created_at"
+    t.integer  "tweet_guid",       limit: 8
+    t.string   "tweet_source"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

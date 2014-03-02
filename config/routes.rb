@@ -1,9 +1,9 @@
 AFLT3::Application.routes.draw do
-  resources :raw_tweets
-
   namespace :api do
     namespace :v1 do
       resources :posts
+      resources :tweets, only: [:index, :show]
+      resources :raw_tweets, only: [:index, :show]  
     end
   end
   root "pages#home"
