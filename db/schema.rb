@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20140301082748) do
 
   create_table "raw_tweets", force: true do |t|
     t.text     "raw"
-    t.integer  "tweet_guid"
+    t.integer  "tweet_guid", limit: 8
     t.datetime "created_at"
     t.datetime "updated_at"
   end
