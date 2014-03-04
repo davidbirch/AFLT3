@@ -6,8 +6,13 @@ class TweetStreamer
       log.info("Tweet streamer started")
       
       # temporary - set this as the companylist
-      keyword_list = ['@AFL', '@AdelaideFC', '@BrisbaneLions', '@CollingwoodFC', '@CarltonFC', '@Essendon_FC', '@Fremantle_FC']
-      keyword_list = ['Cricket', 'Warner']
+      keyword_list = ['@ESPNcricinfo', '@abcgrandstand']
+      keyword_list += ['@AFL', '@AFLPhotos', '@AFLrecord', '@AFLTribunal', '@AFLPlayers', '@AFLNewsWire', '@DrDreamTeam']
+      keyword_list += ['@AdelaideFC', '@BrisbaneLions', '@CollingwoodFC', '@CarltonFC', '@Essendon_FC', '@Fremantle_FC', '@CatsInside']
+
+      filter_list = [16542390, 17331252]
+      filter_list += [16319888, 21342797, 34446382, 561823721, 41718791, 115013849, 1253361798]
+      
       
       # log the row count for 'new_raw_tweets'
       log.info("Starting number of raw tweets: #{RawTweet.count}")
@@ -32,9 +37,10 @@ class TweetStreamer
       end
       
       # call the tweetstream client
-      TweetStream::Client.new.track(keyword_list) do |status|
+      #TweetStream::Client.new.track(keyword_list) do |status|
+      TweetStream::Client.new.filter(:track=>keyword_list, :filter=>filter_list) do |status|
         create_raw_tweet_from_stream(log,status)
-     end
+      end
      
     rescue => e
       log.error("#{e.message}")
