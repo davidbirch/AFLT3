@@ -5,5 +5,5 @@ AFLT3.Tweet = DS.Model.extend({
   tweetCreatedAt: DS.attr('date'),
   tweetGuid: DS.attr('number'),
   tweetSource: DS.attr('string'),
-  userId: DS.attr('number')
+  twitterUserID: DS.attr('number')
 });
