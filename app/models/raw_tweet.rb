@@ -35,7 +35,7 @@ class RawTweet < ActiveRecord::Base
     # create the Tweet
     tweet = twitter_user.Tweets.find_or_create_by(tweet_guid: tweet_guid) do |t|
       t.tweet_text = tweet_text
-      t.created_at = tweet_original_created_at
+      t.tweet_created_at = tweet_original_created_at
       t.tweet_guid = tweet_guid
       t.tweet_source = tweet_source
       t.save
