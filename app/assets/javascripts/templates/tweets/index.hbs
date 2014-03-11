@@ -2,7 +2,7 @@
 <p>this is the list of tweets</p>
 <ul class="tweets">
   {{#each}}
-    <li>{{tweetText}}</li>
+    <li>{{tweetText}} <strong>({{twitterUser.name}})</strong></li>
   {{else}}
     <li>There are no tweets.</li>
   {{/each}}

@@ -5,5 +5,7 @@ AFLT3.TwitterUser = DS.Model.extend({
   screenName: DS.attr('string'),
   userGuid: DS.attr('number'),
   profileBackgroundColour: DS.attr('string'),
-  profileBackgroundImageUrl: DS.attr('string')
+  profileBackgroundImageUrl: DS.attr('string'),
+  
+  tweets: DS.hasMany('AFLT3.Tweet')
 });

@@ -5,5 +5,7 @@ AFLT3.Tweet = DS.Model.extend({
   tweetCreatedAt: DS.attr('string'),
   tweetGuid: DS.attr('number'),
   tweetSource: DS.attr('string'),
-  twitterUserID: DS.attr('number')
+  twitterUserID: DS.attr('number'),
+  
+  twitterUser: DS.belongsTo('AFLT3.TwitterUser')
 });
